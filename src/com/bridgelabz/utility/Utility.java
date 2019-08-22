@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class Utility
 {
+	// Method for Binary Searching-Find word from File
 	public static String[] fileRead(File f) throws IOException
 	{
 		String word= "";
@@ -71,6 +72,7 @@ public class Utility
 		}
 	}
 
+	//Method for Insertion Sort
 	public static void insertionSort(Comparable[] stringarr)
 	{
 		Comparable temp;
@@ -88,7 +90,7 @@ public class Utility
 		
 	}
 	
-	
+	//Method for Bubble Sort
 	public static void bubbleSort(int arr[])
     {
         int n = arr.length;
@@ -109,6 +111,7 @@ public class Utility
         System.out.println();
     }
 
+	//Method for Binary Search
 	public static int binarySearch(int[] arr, int i, int j, int k)
 	{
 		if (j >= i)
@@ -122,4 +125,76 @@ public class Utility
         } 
        return -1; 
   	}
+
+	public void mergeSort(String[] first) 
+	{
+		
+		
+	}
+
+	public void merge(String[] third, String[] first, String[] second) 
+	{
+		 int a = 0;
+	        int b = 0;
+	        for (int i = 0; i < third.length; i++) 
+	        {
+	            if (b >= second.length || (a < first.length && first[a].compareToIgnoreCase(second[b]) < 0)) 
+	            {
+	            	third[i] = first[a];
+	                a++;
+	            } else 
+	            {
+	            	third[i] = second[b];
+	                b++;
+	            }
+	        }
+		
+	}
+
+	public void merge(String[] third) 
+	{
+		if (third.length > 2) 
+		{
+            String[] left = new String[third.length / 2];
+            String[] right = new String[third.length - third.length / 2];
+
+            for (int i = 0; i < left.length; i++) 
+            {
+                left[i] = third[i];
+            }
+
+            for (int i = 0; i < right.length; i++) 
+            {
+                right[i] = third[i + third.length / 2];
+            }
+
+            mergeSort(left);
+            mergeSort(right);
+            merge(third, left, right);
+        }
+		
+	}
+
+	public static void sort(String[] arr)
+	{
+		String temp;
+		for( int i=0;i<arr.length-1;i++)
+		{
+			for(int j=i+1;j<arr.length;j++)
+			{
+				if(arr[i].compareToIgnoreCase(arr[j])>0)
+				{
+					temp=arr[i];
+					arr[i]=arr[j];
+					arr[j]=temp;
+				}
+			}
+		}
+
+		
+	}
+	
+	
+		
+	
 }

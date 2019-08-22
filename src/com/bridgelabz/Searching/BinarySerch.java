@@ -11,7 +11,7 @@ public class BinarySerch
 	public static void main(String[] args) 
 	{
 		Utility utility=new Utility();
-		File f=new File("home/bridgelabz/test.txt");
+		File f=new File("home/slot2/Desktop/index.txt");
 		try
 		{
 		  Scanner scanner=new Scanner(System.in);
