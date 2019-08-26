@@ -14,7 +14,7 @@ public class Register
 		String name=s.nextLine();
 		Pattern pattern = Pattern.compile("[A-Z][a-z]+");
 		Matcher matcher = pattern.matcher(name);
-		String st2=new String("Your First Name is: <<firstName>>");
+		String st2=new String();
 		if (matcher.matches()) 
 		{
 			st2=st2.replaceAll("<<firstName>>",name);
@@ -29,7 +29,7 @@ public class Register
 		String name1=s.nextLine();
 		Pattern pattern1 = Pattern.compile("[A-Z][a-z]+");
 		Matcher matcher1 = pattern.matcher(name1);
-		String st=new String("Your Last Name is: <<LastName>>");
+		String st=new String();
 		if (matcher.matches()) 
 		{
 			st=st.replaceAll("<<LastName>>",name1);
@@ -44,8 +44,8 @@ public class Register
 		System.out.println("Enter email: ");
 		String email=s.nextLine();
 		Pattern pattern2 = Pattern.compile("^[_A-Za-z0-9-\\\\+]+(\\\\.[_A-Za-z0-9-]+)*@”+”[A-Za-z0-9-]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})$”+");
-		Matcher matcher2 = pattern.matcher(name1);
-		String st1=new String("Your email Name is: <<Email>>");
+		Matcher matcher2 = pattern.matcher(email);
+		String st1=new String();
 		if (matcher.matches()) 
 		{
 			st1=st1.replaceAll("<<Email>>",email);
@@ -59,9 +59,9 @@ public class Register
 		//Mobile Number
 				System.out.println("Enter mobile number: ");
 				String mobno=s.nextLine();
-				Pattern pattern3 = Pattern.compile("\\d{2}-\\d{10}");
+				Pattern pattern3 = Pattern.compile("\\d{3}-\\d{7}");
 				Matcher matcher3 = pattern.matcher(mobno);
-				String st3=new String("Your <<mobileNumber>>");
+				String st3=new String();
 				if (matcher.matches()) 
 				{
 					
@@ -70,15 +70,15 @@ public class Register
 				      }
 				      else
 				      {
-				    	  System.out.println("Phone Number must be in the form XX-XXXXXXXXXX");
+				    	  System.out.println("Phone Number must be in the form XX-XXXXXXXX");
 				      }
 				
 		//User Id
 				System.out.println("Enter User name: ");
 				String user=s.nextLine();
-				Pattern pattern4 = Pattern.compile("[A-Z][a-z]+( [A-Z][a-z]+)");
-				Matcher matcher4 = pattern.matcher(name);
-				String stn=new String("Your User Name is: <<UserName>>");
+				Pattern pattern4 = Pattern.compile("[A-Z][a-z]+([A-Z][a-z]+)");
+				Matcher matcher4 = pattern.matcher(user);
+				String stn=new String();
 				if (matcher.matches()) 
 				{
 					stn=stn.replaceAll("<<UserName>>",user);
@@ -92,18 +92,19 @@ public class Register
 				
 		System.out.println("Enter Password: ");
 		String password=s.nextLine();
-		Pattern pattern5 = Pattern.compile("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,20})");
-		Matcher matcher5 = pattern.matcher(name);
-		String stn1=new String("Your Password is: <<Password>>");
+		Pattern pattern5 = Pattern.compile("((?=.*[a-z])(?=.*\\d)(?=.*[A-Z])(?=.*[@#$%!]).{8,20})");
+		Matcher matcher5 = pattern.matcher(password);
+		String stn1=new String();
 		if (matcher.matches()) 
 		{
 			stn1=stn1.replaceAll("<<Password>>",password);
 			System.out.println(stn1);
+			
 		}
 		else
 		{
 			System.out.println("Your password Should be minimum 8 characters");
 		}	
-			
+		System.out.println("Thank you for register!");
 	}
 }

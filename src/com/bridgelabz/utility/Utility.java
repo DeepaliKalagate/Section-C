@@ -8,29 +8,29 @@ import java.util.ArrayList;
 public class Utility
 {
 	// Method for Binary Searching-Find word from File
-	public static String[] fileRead(File f) throws IOException
-	{
-		String word= "";
-		ArrayList<String> s1=new ArrayList<String>();
-		FileReader fr=new FileReader(f);
-		int c;
-		while((c=fr.read())!=-1)
-		{
-			if(c==32)
-			{
-				s1.add(word);
-				word="";
-			}
-			else
-			{
-				word=word+String.valueOf((char) c);
-			}
-		}
-		fr.close();
-		String[] s=new String[s1.size()];
-		s1.toArray(s);
-		return s;
-	}
+	public static int binarySerch(String[] arr, String x) 
+    { 
+		 int l = 0, r = arr.length - 1; 
+	        while (l <= r) { 
+	            int m = l + (r - l) / 2; 
+	  
+	            int res = x.compareTo(arr[m]); 
+	  
+	            // Check if x is present at mid 
+	            if (res == 0) 
+	                return m; 
+	  
+	            // If x greater, ignore left half 
+	            if (res > 0) 
+	                l = m + 1; 
+	  
+	            // If x is smaller, ignore right half 
+	            else
+	                r = m - 1; 
+	        } 
+	  
+	        return -1; 
+    } 
 
 	public static int binary(String[] arr, String s1)
 	{
@@ -192,6 +192,23 @@ public class Utility
 		}
 
 		
+	}
+	public void poem(String animal,String sound) 
+	{
+		String str="Old MACDONALD had a farm\n" + 
+				"E-I-E-I-O\n" + 
+				"And on his farm he had a ANIMAL\n" + 
+				"E-I-E-I-O\n" + 
+				"With a SOUND SOUND here\n" + 
+				"And a SOUND SOUND there\n" + 
+				"Here a SOUND, there a SOUND\n" + 
+				"Everywhere a SOUND SOUND\n" + 
+				"Old MacDonald had a farm\n" + 
+				"E-I-E-I-O";
+		String replaceString=str.replaceAll("ANIMAL", animal);
+		String replaceString2=replaceString.replaceAll("SOUND", sound);
+		
+		System.out.println(replaceString2);
 	}
 	
 	
