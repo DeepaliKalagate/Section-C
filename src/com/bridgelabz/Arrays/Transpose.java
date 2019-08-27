@@ -5,8 +5,8 @@ public class Transpose
      public static void main(String args[])  
      {
     	int i, j;
+    	Scanner scanner=new Scanner(System.in);
     	System.out.println("Enter total rows and columns: ");
-    	Scanner scanner = new Scanner(System.in);
     	int row = scanner.nextInt();
     	int column = scanner.nextInt();
     	int array[][] = new int[row][column];

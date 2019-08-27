@@ -20,24 +20,40 @@ public class MatrixMultiplication
 	      for (i = 0; i < a; i++)
 	         for (j = 0; j < b; j++)
 	            first[i][j] = scanner.nextInt();
+	      
+	    //Print First array
+	         for (i = 0; i < a; i++)
+	         {
+		            for (j = 0; j < b; j++)
+		            {
+		               System.out.print(first[i][j]+ " ");
+		            }
+		            System.out.println("");
+	         }
 	 
 	      System.out.println("Enter the number of rows and columns of second matrix");
 	      p = scanner.nextInt();
 	      q = scanner.nextInt();
 	 
-	      if (b != p)
-	         System.out.println("The matrices can't be multiplied with each other.");
-	      else
-	      {
 	         int second[][] = new int[p][q];
 	         int multiply[][] = new int[a][q];
+	         
 	 
 	         System.out.println("Enter elements of second matrix");
 	 
 	         for (i = 0; i < p; i++)
 	            for (j = 0; j < q; j++)
 	               second[i][j] = scanner.nextInt();
-	 
+	         //Print Second array
+	         for (i = 0; i < p; i++)
+	         {
+		            for (j = 0; j < q; j++)
+		            {
+		               System.out.print(second[i][j]+ " ");
+		            }
+		            System.out.println();
+	         }
+	         
 	         for (i = 0; i < a; i++)
 	         {
 	            for (j = 0; j < q; j++)
@@ -45,9 +61,11 @@ public class MatrixMultiplication
 	               for (k = 0; k < p; k++)
 	               {
 	                  sum = sum + first[i][k]*second[k][j];
+	                  
 	               }
 	 
 	               multiply[i][j] = sum;
+	              
 	               sum = 0;
 	            }
 	         }
@@ -58,10 +76,13 @@ public class MatrixMultiplication
 	         {
 	            for (j = 0; j < q; j++)
 	               System.out.print(multiply[i][j]+"\t");
+	            	
 	 
 	            System.out.print("\n");
 	         }
-	      }
+	      
+	        
+	      
 	   }
 }
 
