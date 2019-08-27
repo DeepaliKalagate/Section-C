@@ -4,37 +4,22 @@ import java.util.ArrayList;
 
 public class UtilityArray
 {
-	
-	 public static void prime()
-	 {
-			System.out.println();
-			boolean b;
-			for (int j = 2; j <= 1000; j++) 
-			{
-				b = true;
-				for (int i = 2; i < j / 2; i++)
-				{
-					if (j % i == 0)
-					{
-						b = false;
-						break;
-					}
-				}
-				if (b)
-					System.out.print(j + " ");
-			}
-		}
-	public static boolean isPrime(int n) 
+	public boolean isPrime(int n) 
 	{
-		for (int i = 2; i < n / 2; i++) 
+		int c = 0;
+		for(int i = 1; i<=n; i++)
 		{
-			if (i % n == 0) 
-			{
-				return false;
-			}
+			if(n%i == 0)
+				c++;
 		}
-		return true;
+		if(c == 2)
+			return true;
+		else
+			return false;
 	}
+	
+	
+	
 
 	
 	public static void primePallindrome() 
@@ -94,19 +79,20 @@ public class UtilityArray
 	}
 	public static boolean isPallindrome(int n) 
 	{
-		int temp = n;
-		int sum = 0;
-		while (temp != 0) 
-		{
-			int r = temp % 10;
-			sum = sum * 10 + r;
-			temp = temp / 10;
-		}
-		if (sum == n) 
-		{
-			return true;
-		}
-		return false;
+		int temp = n;  
+		int sum=0;
+		  while(n>0)
+		  {    
+		 int r=n%10;  
+		   sum=(sum*10)+r;    
+		   n=n/10;    
+		  }    
+		  if(temp==sum)    
+		   return true; 
+		  else    
+		   return false;
+
+		
 	}
 	public static boolean anagram(int n1, int n2) 
 	{
