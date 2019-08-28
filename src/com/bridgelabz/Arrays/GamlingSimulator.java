@@ -18,34 +18,8 @@ public class GamlingSimulator {
 		int goal=scanner.nextInt();
 		System.out.println("Enter number of Tries do you want to play: ");
 		int tries=scanner.nextInt();
-		gamling(stake,goal,tries);
+		utility.gamling(stake,goal,tries);
 		scanner.close();
 	}
-	public static void gamling(int stake, int goal, int tries) 
-	{
-		int win=0;
-		 int trails=0;
-		 for(int i=0;i<tries;i++) 
-		 {
-			 int money=stake;
-			 while(money>0 && money<goal)
-			 {
-				 if(Math.random()>0.5) 
-				 {
-					 money++;
-					 trails++;
-				 }
-				 else 
-				 {
-				 		money--;
-				 		trails++;
-				 	}
-			 }
-			 if(money==goal)
-				 win++;	
-		 }
-		 System.out.print(win+"\t");
-		 System.out.print((tries-win));
-		 
-	}
+	
 }
