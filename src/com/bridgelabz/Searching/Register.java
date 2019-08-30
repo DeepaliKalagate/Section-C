@@ -7,14 +7,14 @@ import java.util.regex.Pattern;
 public class Register 
 {
 	public static void main(String[] args) 
-	{
+	{	
 		//First Name
 		Scanner s = new Scanner(System.in);
 		System.out.println("Enter First name: ");
 		String name=s.nextLine();
-		Pattern pattern = Pattern.compile("[A-Z][a-z]+");
+		Pattern pattern = Pattern.compile("[A-Z][a-z]+{3,20}");
 		Matcher matcher = pattern.matcher(name);
-		String st2=new String();
+		String st2=new String("Your name is:<<firstName>>");
 		if (matcher.matches()) 
 		{
 			st2=st2.replaceAll("<<firstName>>",name);
@@ -24,7 +24,7 @@ public class Register
 		{
 		    	  System.out.println("Your name Should be only letters");
 		}	
-		//Last Nmae
+	/*	//Last Nmae
 		System.out.println("Enter Last name: ");
 		String name1=s.nextLine();
 		Pattern pattern1 = Pattern.compile("[A-Z][a-z]+");
@@ -77,9 +77,9 @@ public class Register
 				System.out.println("Enter User name: ");
 				String user=s.nextLine();
 				Pattern pattern4 = Pattern.compile("[A-Z][a-z]+([A-Z][a-z]+)");
-				Matcher matcher4 = pattern.matcher(user);
+				Matcher matcher4 = pattern4.matcher(user);
 				String stn=new String();
-				if (matcher.matches()) 
+				if (matcher4.matches()) 
 				{
 					stn=stn.replaceAll("<<UserName>>",user);
 				    System.out.println(stn);
@@ -93,9 +93,9 @@ public class Register
 		System.out.println("Enter Password: ");
 		String password=s.nextLine();
 		Pattern pattern5 = Pattern.compile("((?=.*[a-z])(?=.*\\d)(?=.*[A-Z])(?=.*[@#$%!]).{8,20})");
-		Matcher matcher5 = pattern.matcher(password);
+		Matcher matcher5 = pattern5.matcher(password);
 		String stn1=new String();
-		if (matcher.matches()) 
+		if (matcher5.matches()) 
 		{
 			stn1=stn1.replaceAll("<<Password>>",password);
 			System.out.println(stn1);
@@ -104,7 +104,7 @@ public class Register
 		else
 		{
 			System.out.println("Your password Should be minimum 8 characters");
-		}	
-		System.out.println("Thank you for register!");
+		}	*/
+		System.out.println("Thank you for register!");	
 	}
 }

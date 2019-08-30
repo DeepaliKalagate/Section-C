@@ -149,6 +149,11 @@ public class UtilityArray
 
 	}
 
-
+	public int randomNumber(int range)
+	{
+		Random random = new Random();
+		return (int) random.nextInt(range) + 1;
+	}
+	
 	
 }
